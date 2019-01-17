@@ -4,32 +4,30 @@ require 'nokogiri'
 require 'pry'
 puts "\e[H\e[2J"
 
-crypto = []
-page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
-page.xpath('//*/td[2]/a').each do |node|
-puts crypto << node.text
-end
+def crypto_scrapper
 
-puts "#{crypto}"
+	crypto = []
+	page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
+	page.xpath('//*/td[2]/a').each do |node|
+	crypto << node.text
+	end
 
-value = []
-page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
-page.xpath('//*/td[5]/a').each do |node|
-	puts value << node.text
-end
-
-# nbcrypto = crypto.length   Pour s'assurer que les 2 arrays sont égales
-# nbvalue = value.length
-# binding.pry
-
-cryptovalue = Hash[crypto.zip value] #création du hash cryptovalue qui associe value à crypto
-
-puts "#{cryptovalue}"
-
-
-
-# cryptovalue = {}
-# nbcrypto.times do |i|
-# 	cryptovalue[i] = { "#{crypto[i]}" => "#{value[i]}" }
+	value = []
+	page = Nokogiri::HTML(open("https://coinmarketcap.com/all/views/all/"))
+	page.xpath('//*/td[5]/a').each do |node|
+	value << node.text
+	end
 	
-# end
+	nbcrypto = crypto.length  # Pour s'assurer que les 2 arrays son t égales
+	#nbvalue = value.length
+	
+	cryptovalue = []
+	nbcrypto.times do |i|
+    cryptovalue << { "#{crypto[i]}" => value[i] }
+	end
+	# cryptovalue = Hash[crypto.zip value] #création du hash cryptovalue qui associe value à crypto
+	puts "#{cryptovalue}"
+
+end
+
+crypto_scrapper
