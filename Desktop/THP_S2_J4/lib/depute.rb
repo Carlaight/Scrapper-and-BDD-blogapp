@@ -16,16 +16,16 @@ end
 
 get_deputy_email
 
-# def get_deputy_full_name
+def get_deputy_full_name
 
-# 	deputy_full_name = []
-# 	page = Nokogiri::HTML(open("http://www2.assemblee-nationale.fr/deputes/fiche/OMC_PA605036"))
-# 	page.xpath('//html/body/div[3]/div/div/div/section[1]/div/article/div[2]/h1').each do |node|
-# 	deputy_full_name << node.text
-#   end
-#   puts "#{deputy_full_name}"
-#   return deputy_full_name
+	deputy_full_name = []
+	page = Nokogiri::HTML(open("https://www.nosdeputes.fr/deputes"))
+	page.css("span[@class=list_nom]").each do |node|
+	deputy_full_name << node.text
+  end
+  puts "#{deputy_full_name}"
+  return deputy_full_name
 
-# end
-# get_deputy_full_name
+end
+get_deputy_full_name
 

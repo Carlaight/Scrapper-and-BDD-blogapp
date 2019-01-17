@@ -6,6 +6,6 @@ describe "get_townhall_urls method" do
   end
 
   it "should return an array" do
-    expect(get_townhall_urls.class).to eq(Array)
+    expect(array_fin.class).to eq(Array)
   end
 end

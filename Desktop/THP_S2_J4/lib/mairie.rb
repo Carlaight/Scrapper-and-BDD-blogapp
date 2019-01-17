@@ -37,7 +37,7 @@ def get_townhall_urls(page)
   hash = Hash[villes.zip(emails)]
   # Création d'un array de hash
   hash.each {|i| array_fin << {i[0] => i[1]}}
-	# puts array_fin
+	puts array_fin
 	return array_fin
 end
 
