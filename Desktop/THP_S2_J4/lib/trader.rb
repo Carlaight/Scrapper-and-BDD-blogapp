@@ -2,7 +2,6 @@ require 'rubygems'
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
-puts "\e[H\e[2J"
 
 def crypto_scrapper
 
@@ -27,7 +26,6 @@ def crypto_scrapper
 	end
 	# cryptovalue = Hash[crypto.zip value] #création du hash cryptovalue qui associe value à crypto
 	puts "#{cryptovalue}"
-
 end
 
 crypto_scrapper
