@@ -3,11 +3,6 @@ require 'open-uri'
 require 'nokogiri'
 require 'pry'
 
-begin
-  do_something() 
-rescue StandardError => e #Pas d'erreur si pas d'email
-	puts "Toutes les mairies n'ont pas renseigné leur email" 
-end
 page = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
 
 # Method de recherche d'email, avec l'adresse html de chaque ville
