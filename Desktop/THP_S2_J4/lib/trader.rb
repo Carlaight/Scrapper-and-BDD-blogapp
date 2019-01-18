@@ -25,8 +25,7 @@ def crypto_scrapper
 		cryptovalue << { "#{crypto[i]}" => value[i] }
 	end
 	# cryptovalue = Hash[crypto.zip value] #création du hash cryptovalue qui associe value à crypto
-	# puts "#{cryptovalue}"
-	puts "#{cryptovalue[1][1]}"
+	puts "#{cryptovalue}"
 	return cryptovalue
 end
 	
